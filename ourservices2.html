@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Styles specific to the photo collage container */
+        .collage-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .unique-collage {
+            display: grid;
+            grid-template-columns: 250px 280px 250px 280px; /* Column widths */
+            grid-template-rows: 1fr; /* Single row with equal height */
+            gap: 10px;
+            max-width: 100%;
+            width: auto;
+            height: 450px; /* Fixed height for the collage */
+            position: relative;
+        }
+        .unique-photo-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+        .unique-photo {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .unique-photo-wrapper:hover {
+            z-index: 1;
+        }
+        .unique-photo-wrapper:hover .unique-photo {
+            transform: scale(1.1);
+        }
+        .unique-photo-wrapper:hover .photo-text {
+            opacity: 1;
+            visibility: visible;
+        }
+        .unique-collage:hover .unique-photo-wrapper:not(:hover) .unique-photo {
+            filter: blur(4px);
+        }
+        .photo-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .unique-portrait1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        .unique-landscape-group1 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr); /* Two rows for landscape images */
+            gap: 10px;
+            height: 100%;
+        }
+        .unique-landscape1 {
+            grid-row: 1 / 2;
+        }
+        .unique-landscape2 {
+            grid-row: 2 / 3;
+        }
+        .unique-portrait2 {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+        .unique-landscape-group2 {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr); /* Two rows for landscape images */
+            gap: 10px;
+            height: 100%;
+        }
+        .unique-landscape3 {
+            grid-row: 1 / 2;
+        }
+        .unique-landscape4 {
+            grid-row: 2 / 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <div class="unique-collage">
+            <div class="unique-photo-wrapper unique-portrait1-wrapper">
+                    <img src="sarisari.jpg" alt="Portrait 1" class="unique-photo unique-portrait1">
+                </a>
+                <div class="photo-text">Sleepwell Apartelle is equipped with an on-site sari-sari store, enhancing your comfort and convenience during your stay.</div>
+            </div>
+            <div class="unique-landscape-group unique-landscape-group1">
+                <div class="unique-photo-wrapper unique-landscape1-wrapper">
+                        <img src="cctv.jpg" alt="Landscape 1" class="unique-photo unique-landscape1">
+                    </a>
+                    <div class="photo-text">To ensure your safety and security, Sleepwell Apartelle offers comprehensive CCTV surveillance throughout the premises.</div>
+                </div>
+                <div class="unique-photo-wrapper unique-landscape2-wrapper">
+                        <img src="view.jpg" alt="Landscape 2" class="unique-photo unique-landscape2">
+                    </a>
+                    <div class="photo-text">Sleepwell Apartelle offers a captivating view for your enjoyment.</div>
+                </div>
+            </div>
+            <div class="unique-photo-wrapper unique-portrait2-wrapper">
+                    <img src="parking.jpg" alt="Portrait 2" class="unique-photo unique-portrait2">
+                </a>
+                <div class="photo-text">Sleepwell Apartelle features on-site parking to accommodate your vehicle with ease.</div>
+            </div>
+            <div class="unique-landscape-group unique-landscape-group2">
+                <div class="unique-photo-wrapper unique-landscape3-wrapper">
+                        <img src="fireexit.jpg" alt="Landscape 3" class="unique-photo unique-landscape3">
+                    </a>
+                    <div class="photo-text">Sleepwell Apartelle is equipped with a fire exit for your safety and emergency preparedness.</div>
+                </div>
+                <div class="unique-photo-wrapper unique-landscape4-wrapper">
+                        <img src="cashier.jpg" alt="Landscape 4" class="unique-photo unique-landscape4">
+                    </a>
+                    <div class="photo-text">Sleepwell Apartelle has a dedicated cashier and staff to assist you during your stay.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
